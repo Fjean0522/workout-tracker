@@ -61,7 +61,7 @@ const updateWorkout = async (req, res) => {
         return res.status(404).json({error: 'Workout not found'})
     }
 
-    const workout = await Workout.findOneAndUpdate({_id: id}, {...req.body.body})
+    const workout = await Workout.findOneAndUpdate({_id: id}, {...req.body})
 
     if (!workout) {
         return res.status(404).json({error: 'Workout not found'})
