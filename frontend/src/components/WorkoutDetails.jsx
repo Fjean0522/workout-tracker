@@ -1,4 +1,5 @@
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext';
+import trashCan from '/public/trash_can.png'
 
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext();
@@ -19,7 +20,7 @@ const WorkoutDetails = ({ workout }) => {
         <p><strong>Load (lb): </strong>{workout.load}</p>
         <p><strong>Reps: </strong>{workout.reps}</p>
         <p>{workout.createdAt}</p>
-        <span onClick={handleClick}>Delete</span>
+        <span onClick={handleClick}><img src={trashCan} /></span>
     </div>
   )
 }
