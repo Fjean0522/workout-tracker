@@ -31,7 +31,7 @@ const WorkoutForm = () => {
             setLoad('')
             setReps('')
             setError(null)
-            dispatch({type: 'SET_WORKOUTS', payload: json})
+            dispatch({ type: 'SET_WORKOUTS', payload: json });
         };
     };
 

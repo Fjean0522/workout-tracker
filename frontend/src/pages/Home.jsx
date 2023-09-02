@@ -19,16 +19,21 @@ const Home = () => {
     };
 
     fetchWorkouts()
-  }, []);
+  }, [workouts]);
 
   return (
     <div className="home">
       <div className="workouts">
 
-        {/* Check if there are any workouts. If so render workout */}
-        {workouts && workouts.map((workout) => (
-          <WorkoutDetails key={workout._id} workout={workout} />
-        ))}
+        {/* Check if there are any workouts. If so render workout.
+            If fetch request fails or returns an empty array, render loading text*/}
+        {Array.isArray(workouts) ? (
+          workouts.map((workout) => (
+            <WorkoutDetails key={workout._id} workout={workout} />
+          ))
+        ) : (
+          <p>Loading workouts...</p>
+        )}
 
       </div>
       <WorkoutForm />
