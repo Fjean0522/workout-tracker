@@ -1,5 +1,6 @@
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext';
-import trashCan from '/public/trash_can.png'
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import trashCan from '../assets/trash_can.png';
 
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext();
@@ -19,7 +20,7 @@ const WorkoutDetails = ({ workout }) => {
         <h4>{workout.title}</h4>
         <p><strong>Load (lb): </strong>{workout.load}</p>
         <p><strong>Reps: </strong>{workout.reps}</p>
-        <p>{workout.createdAt}</p>
+        <p>{formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</p>
         <span onClick={handleClick}><img src={trashCan} /></span>
     </div>
   )
