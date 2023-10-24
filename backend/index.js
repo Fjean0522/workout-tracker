@@ -4,12 +4,14 @@ const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 3000;
 const workoutRouts = require('./routes/workoutRouts');
+const userRoutes = require('./routes/user');
 
 // Middleware
 app.use(express.json());
 
 // Routes
 app.use('/api/workouts', workoutRouts);
+app.use('/api/user', workoutRouts);
 
 // Connect to db
 mongoose.connect(process.env.DB_URI)
