@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/workouts', workoutRouts);
-app.use('/api/user', workoutRouts);
+app.use('/api/user', userRoutes);
 
 // Connect to db
 mongoose.connect(process.env.DB_URI)
